@@ -1,0 +1,1675 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <title>Terraplenagem e Retroescavadeira | [Nome da Empresa]</title>
+
+  <meta
+    name="description"
+    content="Serviços de terraplenagem, escavação, nivelamento e movimentação de terra com retroescavadeira. Solicite seu orçamento."
+  >
+
+  <meta name="theme-color" content="#111111">
+
+  <style>
+    /* =========================================================
+       RESET
+    ========================================================= */
+
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    html {
+      scroll-behavior: smooth;
+    }
+
+    body {
+      font-family: Arial, Helvetica, sans-serif;
+      background: #f5f4f1;
+      color: #151515;
+      overflow-x: hidden;
+    }
+
+    img {
+      width: 100%;
+      display: block;
+    }
+
+    a {
+      color: inherit;
+      text-decoration: none;
+    }
+
+    button {
+      font: inherit;
+    }
+
+
+    /* =========================================================
+       VARIÁVEIS
+    ========================================================= */
+
+    :root {
+      --dark: #111111;
+      --dark-soft: #1a1a1a;
+      --light: #f5f4f1;
+      --white: #ffffff;
+      --accent: #d89b27;
+      --accent-dark: #b87b16;
+      --gray: #6c6c6c;
+      --border: rgba(0,0,0,.10);
+      --max-width: 1200px;
+    }
+
+
+    /* =========================================================
+       UTILITÁRIOS
+    ========================================================= */
+
+    .container {
+      width: min(90%, var(--max-width));
+      margin: 0 auto;
+    }
+
+    .eyebrow {
+      display: inline-flex;
+      align-items: center;
+      gap: 10px;
+      font-size: 12px;
+      font-weight: 700;
+      letter-spacing: 2px;
+      text-transform: uppercase;
+      color: var(--accent);
+      margin-bottom: 20px;
+    }
+
+    .eyebrow::before {
+      content: "";
+      width: 28px;
+      height: 1px;
+      background: var(--accent);
+    }
+
+    .section-title {
+      font-size: clamp(2rem, 4vw, 4rem);
+      line-height: 1.03;
+      letter-spacing: -2px;
+      max-width: 750px;
+    }
+
+    .section-text {
+      color: var(--gray);
+      line-height: 1.8;
+      font-size: 16px;
+      max-width: 620px;
+    }
+
+    .btn {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 12px;
+      padding: 16px 24px;
+      border-radius: 3px;
+      font-size: 14px;
+      font-weight: 700;
+      transition: .3s ease;
+      cursor: pointer;
+    }
+
+    .btn-primary {
+      background: var(--accent);
+      color: #111;
+    }
+
+    .btn-primary:hover {
+      background: var(--white);
+      transform: translateY(-3px);
+    }
+
+    .btn-outline {
+      border: 1px solid rgba(255,255,255,.35);
+      color: white;
+    }
+
+    .btn-outline:hover {
+      background: white;
+      color: #111;
+      transform: translateY(-3px);
+    }
+
+
+    /* =========================================================
+       HEADER
+    ========================================================= */
+
+    header {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      z-index: 1000;
+      padding: 20px 0;
+      transition: .35s ease;
+    }
+
+    header.scrolled {
+      background: rgba(17,17,17,.94);
+      backdrop-filter: blur(12px);
+      padding: 14px 0;
+      box-shadow: 0 5px 30px rgba(0,0,0,.15);
+    }
+
+    .nav {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+    }
+
+    .logo {
+      color: white;
+      font-size: 18px;
+      font-weight: 800;
+      letter-spacing: 1px;
+      text-transform: uppercase;
+    }
+
+    .logo span {
+      color: var(--accent);
+    }
+
+    .nav-links {
+      display: flex;
+      align-items: center;
+      gap: 30px;
+      color: white;
+      font-size: 13px;
+      font-weight: 600;
+    }
+
+    .nav-links a {
+      position: relative;
+      opacity: .9;
+    }
+
+    .nav-links a::after {
+      content: "";
+      position: absolute;
+      left: 0;
+      bottom: -7px;
+      width: 0;
+      height: 1px;
+      background: var(--accent);
+      transition: .3s;
+    }
+
+    .nav-links a:hover::after {
+      width: 100%;
+    }
+
+    .nav-cta {
+      background: var(--accent);
+      color: #111;
+      padding: 11px 17px;
+      border-radius: 3px;
+    }
+
+    .nav-cta:hover::after {
+      width: 0 !important;
+    }
+
+    .menu-btn {
+      display: none;
+      border: 0;
+      background: transparent;
+      color: white;
+      font-size: 28px;
+      cursor: pointer;
+    }
+
+
+    /* =========================================================
+       HERO
+    ========================================================= */
+
+    .hero {
+      position: relative;
+      min-height: 100vh;
+      display: flex;
+      align-items: center;
+      overflow: hidden;
+      background: #111;
+    }
+
+    .hero-bg {
+      position: absolute;
+      inset: 0;
+      background-image:
+        linear-gradient(
+          90deg,
+          rgba(0,0,0,.82) 0%,
+          rgba(0,0,0,.58) 45%,
+          rgba(0,0,0,.20) 100%
+        ),
+        url("/hero-retroescavadeira.jpg");
+
+      background-size: cover;
+      background-position: center;
+      transform: scale(1.06);
+      animation: heroZoom 10s ease forwards;
+    }
+
+    @keyframes heroZoom {
+      from {
+        transform: scale(1.10);
+      }
+      to {
+        transform: scale(1);
+      }
+    }
+
+    .hero-content {
+      position: relative;
+      z-index: 2;
+      color: white;
+      padding-top: 80px;
+    }
+
+    .hero-label {
+      opacity: 0;
+      transform: translateY(25px);
+      animation: fadeUp .8s .2s forwards;
+    }
+
+    .hero h1 {
+      max-width: 850px;
+      font-size: clamp(2.5rem, 7vw, 5rem);
+      line-height: .94;
+      letter-spacing: -5px;
+      font-weight: 800;
+      margin-bottom: 28px;
+      opacity: 0;
+      transform: translateY(35px);
+      animation: fadeUp .9s .35s forwards;
+    }
+
+    .hero h1 span {
+      color: var(--accent);
+    }
+
+    .hero-description {
+      max-width: 600px;
+      color: rgba(255,255,255,.78);
+      font-size: 18px;
+      line-height: 1.7;
+      margin-bottom: 35px;
+      opacity: 0;
+      transform: translateY(25px);
+      animation: fadeUp .8s .55s forwards;
+    }
+
+    .hero-actions {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 12px;
+      opacity: 0;
+      transform: translateY(25px);
+      animation: fadeUp .8s .7s forwards;
+    }
+
+    @keyframes fadeUp {
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+
+    .hero-bottom {
+      position: absolute;
+      bottom: 35px;
+      left: 0;
+      width: 100%;
+      z-index: 2;
+    }
+
+    .hero-bottom-inner {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      color: rgba(255,255,255,.7);
+      font-size: 12px;
+      letter-spacing: 1px;
+      text-transform: uppercase;
+    }
+
+    .scroll-indicator {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+    }
+
+    .scroll-line {
+      width: 50px;
+      height: 1px;
+      background: rgba(255,255,255,.5);
+    }
+
+
+    /* =========================================================
+       INTRO (AJUSTADO PARA CENTRALIZAR A IMAGEM AO LADO DO TEXTO)
+    ========================================================= */
+
+    .intro {
+      padding: 120px 0;
+      background: var(--light);
+    }
+
+    .intro-grid {
+      display: grid;
+      grid-template-columns: 1fr 1.1fr;
+      gap: 80px;
+      align-items: center; /* Centraliza a imagem perfeitamente na altura do texto */
+    }
+
+    .intro-img-container img {
+      width: 100%;
+      max-width: 520px;
+      height: auto;
+      mix-blend-mode: multiply; /* Faz o fundo branco residual sumir automaticamente */
+    }
+
+
+    /* =========================================================
+       SERVICES
+    ========================================================= */
+
+    .services {
+      padding: 110px 0;
+      background: white;
+    }
+
+    .services-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: end;
+      gap: 40px;
+      margin-bottom: 60px;
+    }
+
+    .services-grid {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      border-top: 1px solid var(--border);
+      border-left: 1px solid var(--border);
+    }
+
+    .service-card {
+      min-height: 270px;
+      padding: 35px 28px;
+      border-right: 1px solid var(--border);
+      border-bottom: 1px solid var(--border);
+      transition: .35s ease;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .service-card::before {
+      content: "";
+      position: absolute;
+      left: 0;
+      bottom: 0;
+      width: 100%;
+      height: 3px;
+      background: var(--accent);
+      transform: scaleX(0);
+      transform-origin: left;
+      transition: .4s;
+    }
+
+    .service-card:hover {
+      background: #faf9f6;
+      transform: translateY(-5px);
+    }
+
+    .service-card:hover::before {
+      transform: scaleX(1);
+    }
+
+    .service-number {
+      font-size: 12px;
+      color: var(--accent);
+      font-weight: 700;
+      margin-bottom: 80px;
+    }
+
+    .service-card h3 {
+      font-size: 22px;
+      margin-bottom: 15px;
+    }
+
+    .service-card p {
+      color: var(--gray);
+      line-height: 1.7;
+      font-size: 14px;
+    }
+
+
+    /* =========================================================
+       FEATURE IMAGE
+    ========================================================= */
+
+    .feature {
+      padding: 120px 0;
+      background: #151515;
+      color: white;
+    }
+
+    .feature-grid {
+      display: grid;
+      grid-template-columns: 1.15fr .85fr;
+      gap: 80px;
+      align-items: center;
+    }
+
+    .image-reveal {
+      overflow: hidden;
+      position: relative;
+    }
+
+    .image-reveal img {
+      height: 650px;
+      object-fit: cover;
+      transform: scale(1.12);
+      transition: transform 1.2s cubic-bezier(.2,.7,.2,1);
+    }
+
+    .image-reveal.visible img {
+      transform: scale(1);
+    }
+
+    .feature-content .section-text {
+      color: rgba(255,255,255,.65);
+      margin-top: 25px;
+      margin-bottom: 35px;
+    }
+
+    .feature-list {
+      list-style: none;
+      border-top: 1px solid rgba(255,255,255,.14);
+    }
+
+    .feature-list li {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 20px 0;
+      border-bottom: 1px solid rgba(255,255,255,.14);
+      font-size: 15px;
+    }
+
+    .feature-list span {
+      color: var(--accent);
+      font-size: 13px;
+    }
+
+
+    /* =========================================================
+       FULL IMAGE SECTION
+    ========================================================= */
+
+    .visual-section {
+      min-height: 650px;
+      position: relative;
+      display: flex;
+      align-items: center;
+      overflow: hidden;
+      background: #111;
+    }
+
+    .visual-bg {
+      position: absolute;
+      inset: 0;
+      background:
+        linear-gradient(rgba(0,0,0,.50), rgba(0,0,0,.60)),
+        url("/retro-obra.jpg")
+        center / cover;
+      transition: transform 1.5s ease;
+    }
+
+    .visual-section.visible .visual-bg {
+      transform: scale(1.04);
+    }
+
+    .visual-content {
+      position: relative;
+      z-index: 2;
+      color: white;
+      max-width: 760px;
+    }
+
+    .visual-content h2 {
+      font-size: clamp(3rem, 6vw, 6rem);
+      line-height: .95;
+      letter-spacing: -4px;
+      margin-bottom: 25px;
+    }
+
+    .visual-content p {
+      max-width: 550px;
+      color: rgba(255,255,255,.78);
+      font-size: 18px;
+      line-height: 1.7;
+    }
+
+
+    /* =========================================================
+       DIFFERENTIALS
+    ========================================================= */
+
+    .differentials {
+      padding: 120px 0;
+      background: var(--light);
+    }
+
+    .diff-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 90px;
+      align-items: start;
+    }
+
+    .diff-items {
+      border-top: 1px solid var(--border);
+    }
+
+    .diff-item {
+      display: grid;
+      grid-template-columns: 55px 1fr;
+      gap: 20px;
+      padding: 28px 0;
+      border-bottom: 1px solid var(--border);
+    }
+
+    .diff-icon {
+      width: 42px;
+      height: 42px;
+      border: 1px solid var(--border);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: var(--accent-dark);
+      font-weight: bold;
+    }
+
+    .diff-item h3 {
+      font-size: 18px;
+      margin-bottom: 8px;
+    }
+
+    .diff-item p {
+      color: var(--gray);
+      font-size: 14px;
+      line-height: 1.7;
+    }
+
+
+    /* =========================================================
+       AREA DE ATENDIMENTO
+    ========================================================= */
+
+    .coverage {
+      padding: 110px 0;
+      background: white;
+    }
+
+    .coverage-box {
+      background: #171717;
+      color: white;
+      padding: 70px;
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 70px;
+      align-items: center;
+    }
+
+    .coverage-box .section-text {
+      color: rgba(255,255,255,.65);
+      margin-top: 20px;
+    }
+
+    .cities {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+    }
+
+    .city {
+      border: 1px solid rgba(255,255,255,.18);
+      padding: 12px 16px;
+      font-size: 13px;
+      color: rgba(255,255,255,.85);
+    }
+
+
+    /* =========================================================
+       CTA
+    ========================================================= */
+
+    .cta {
+      position: relative;
+      padding: 140px 0;
+      background:
+        linear-gradient(rgba(0,0,0,.76), rgba(0,0,0,.76)),
+        url("/retrorodape.jpg")
+        center / cover;
+      color: white;
+      text-align: center;
+    }
+
+    .cta h2 {
+      font-size: clamp(3rem, 7vw, 7rem);
+      letter-spacing: -5px;
+      line-height: .92;
+      max-width: 950px;
+      margin: 0 auto 30px;
+    }
+
+    .cta p {
+      max-width: 550px;
+      margin: 0 auto 35px;
+      color: rgba(255,255,255,.7);
+      line-height: 1.7;
+    }
+
+
+    /* =========================================================
+       FOOTER
+    ========================================================= */
+
+    footer {
+      background: #0c0c0c;
+      color: white;
+      padding: 45px 0;
+    }
+
+    .footer-inner {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      gap: 30px;
+    }
+
+    .footer-copy {
+      color: rgba(255,255,255,.45);
+      font-size: 12px;
+    }
+
+
+    /* =========================================================
+       WHATSAPP
+    ========================================================= */
+
+    .whatsapp {
+      position: fixed;
+      right: 24px;
+      bottom: 24px;
+      width: 58px;
+      height: 58px;
+      border-radius: 50%;
+      background: #25D366;
+      color: white;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      z-index: 999;
+      box-shadow: 0 10px 30px rgba(0,0,0,.25);
+      transition: .3s;
+      font-size: 25px;
+    }
+
+    .whatsapp:hover {
+      transform: scale(1.08) translateY(-3px);
+    }
+
+
+    /* =========================================================
+       SCROLL REVEAL
+    ========================================================= */
+
+    .reveal {
+      opacity: 0;
+      transform: translateY(45px);
+      transition:
+        opacity .8s ease,
+        transform .8s cubic-bezier(.2,.7,.2,1);
+    }
+
+    .reveal.visible {
+      opacity: 1;
+      transform: translateY(0);
+    }
+
+    .reveal-left {
+      opacity: 0;
+      transform: translateX(-45px);
+      transition: .8s cubic-bezier(.2,.7,.2,1);
+    }
+
+    .reveal-left.visible {
+      opacity: 1;
+      transform: translateX(0);
+    }
+
+    .reveal-right {
+      opacity: 0;
+      transform: translateX(45px);
+      transition: .8s cubic-bezier(.2,.7,.2,1);
+    }
+
+    .reveal-right.visible {
+      opacity: 1;
+      transform: translateX(0);
+    }
+
+
+    /* =========================================================
+       RESPONSIVO
+    ========================================================= */
+
+    @media (max-width: 950px) {
+
+      .nav-links {
+        position: fixed;
+        top: 0;
+        right: -100%;
+        width: min(80%, 340px);
+        height: 100vh;
+        background: #111;
+        flex-direction: column;
+        justify-content: center;
+        gap: 30px;
+        transition: .4s ease;
+      }
+
+      .nav-links.active {
+        right: 0;
+      }
+
+      .menu-btn {
+        display: block;
+        position: relative;
+        z-index: 1001;
+      }
+
+      .services-grid {
+        grid-template-columns: 1fr 1fr;
+      }
+
+      .intro-grid,
+      .feature-grid,
+      .diff-grid,
+      .coverage-box {
+        grid-template-columns: 1fr;
+      }
+
+      .intro-grid {
+        gap: 40px;
+      }
+
+      .feature-grid {
+        gap: 50px;
+      }
+
+      .coverage-box {
+        gap: 40px;
+        padding: 50px 35px;
+      }
+    }
+
+
+    @media (max-width: 650px) {
+
+      .container {
+        width: 88%;
+      }
+
+      .hero {
+        min-height: 800px;
+      }
+
+      .hero-bg {
+        background-position: 62% center;
+      }
+
+      .hero h1 {
+        font-size: clamp(3rem, 14vw, 5rem);
+        letter-spacing: -3px;
+      }
+
+      .hero-description {
+        font-size: 16px;
+      }
+
+      .hero-actions {
+        flex-direction: column;
+        align-items: stretch;
+      }
+
+      .btn {
+        width: 100%;
+      }
+
+      .hero-bottom {
+        display: none;
+      }
+
+      .intro,
+      .services,
+      .feature,
+      .differentials,
+      .coverage {
+        padding: 80px 0;
+      }
+
+      .services-header {
+        display: block;
+      }
+
+      .services-header .section-text {
+        margin-top: 20px;
+      }
+
+      .services-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .service-card {
+        min-height: 230px;
+      }
+
+      .image-reveal img {
+        height: 430px;
+      }
+
+      .visual-section {
+        min-height: 550px;
+      }
+
+      .visual-content h2 {
+        letter-spacing: -3px;
+      }
+
+      .cta {
+        padding: 100px 0;
+      }
+
+      .cta h2 {
+        letter-spacing: -3px;
+      }
+
+      .footer-inner {
+        flex-direction: column;
+        align-items: flex-start;
+      }
+
+      .whatsapp {
+        right: 18px;
+        bottom: 18px;
+        width: 55px;
+        height: 55px;
+      }
+    }
+
+  </style>
+</head>
+
+
+<body>
+
+  <!-- =======================================================
+       HEADER
+  ======================================================== -->
+
+  <header id="header">
+
+    <div class="container">
+
+      <nav class="nav">
+
+        <a href="#inicio" class="logo">
+          [NOME<span> EMPRESA</span>]
+        </a>
+
+        <div class="nav-links" id="navLinks">
+
+          <a href="#servicos">Serviços</a>
+          <a href="#equipamento">Equipamento</a>
+          <a href="#atendimento">Atendimento</a>
+          <a href="#contato" class="nav-cta">Solicitar orçamento</a>
+
+        </div>
+
+        <button
+          class="menu-btn"
+          id="menuBtn"
+          aria-label="Abrir menu"
+        >
+          ☰
+        </button>
+
+      </nav>
+
+    </div>
+
+  </header>
+
+
+
+  <!-- =======================================================
+       HERO
+  ======================================================== -->
+
+  <main>
+
+    <section class="hero" id="inicio">
+
+      <div class="hero-bg"></div>
+
+      <div class="container">
+
+        <div class="hero-content">
+
+          <div class="eyebrow hero-label">
+            Terraplenagem • Retroescavadeira
+          </div>
+
+          <h1>
+            Seu terreno pronto para o <span>próximo passo.</span>
+          </h1>
+
+          <p class="hero-description">
+            Serviços de terraplenagem, escavação, nivelamento e
+            movimentação de terra com retroescavadeira.
+          </p>
+
+          <div class="hero-actions">
+
+            <a
+              href="https://wa.me/5500000000000?text=Olá!%20Gostaria%20de%20solicitar%20um%20orçamento."
+              target="_blank"
+              class="btn btn-primary"
+            >
+              Solicitar orçamento →
+            </a>
+
+            <a
+              href="#servicos"
+              class="btn btn-outline"
+            >
+              Conhecer serviços
+            </a>
+
+          </div>
+
+        </div>
+
+      </div>
+
+
+      <div class="hero-bottom">
+
+        <div class="container hero-bottom-inner">
+
+          <div>
+            [CIDADE] • [REGIÃO]
+          </div>
+
+          <div class="scroll-indicator">
+            Role para explorar
+            <span class="scroll-line"></span>
+          </div>
+
+        </div>
+
+      </div>
+
+    </section>
+
+
+
+    <!-- =====================================================
+         INTRO
+    ====================================================== -->
+
+    <section class="intro">
+
+      <div class="container">
+
+        <div class="intro-grid">
+
+          <div class="reveal-left intro-img-container">
+            <img src="/jcb-sem-fundo.png" alt="Retroescavadeira em operação" loading="lazy">
+          </div>
+
+          <div class="reveal-right">
+
+            <div class="eyebrow">
+              Soluções para o seu terreno
+            </div>
+
+            <h2 class="section-title">
+              Mais do que uma máquina. O equipamento certo para o serviço.
+            </h2>
+
+            <p class="section-text" style="margin-top:25px;">
+              Cada terreno exige um tipo de preparação.
+              Trabalhamos com serviços de escavação, nivelamento,
+              limpeza e movimentação de terra para obras,
+              construções e projetos diversos.
+            </p>
+
+          </div>
+
+        </div>
+
+      </div>
+
+    </section>
+
+
+
+    <!-- =====================================================
+         SERVIÇOS
+    ====================================================== -->
+
+    <section class="services" id="servicos">
+
+      <div class="container">
+
+        <div class="services-header reveal">
+
+          <div>
+
+            <div class="eyebrow">
+              O que fazemos
+            </div>
+
+            <h2 class="section-title">
+              Serviços para preparar o terreno.
+            </h2>
+
+          </div>
+
+          <p class="section-text">
+            Soluções práticas para diferentes necessidades
+            de preparação e movimentação de terra.
+          </p>
+
+        </div>
+
+
+        <div class="services-grid">
+
+          <article class="service-card reveal">
+
+            <div class="service-number">
+              01 / 04
+            </div>
+
+            <h3>Terraplenagem</h3>
+
+            <p>
+              Preparação, correção e nivelamento do terreno
+              para obras e novas construções.
+            </p>
+
+          </article>
+
+
+          <article class="service-card reveal">
+
+            <div class="service-number">
+              02 / 04
+            </div>
+
+            <h3>Escavações</h3>
+
+            <p>
+              Escavações para fundações, obras,
+              instalações e diferentes necessidades do terreno.
+            </p>
+
+          </article>
+
+
+          <article class="service-card reveal">
+
+            <div class="service-number">
+              03 / 04
+            </div>
+
+            <h3>Abertura de valas</h3>
+
+            <p>
+              Abertura de valas para tubulações,
+              drenagem, infraestrutura e instalações.
+            </p>
+
+          </article>
+
+
+          <article class="service-card reveal">
+
+            <div class="service-number">
+              04 / 04
+            </div>
+
+            <h3>Limpeza e movimentação</h3>
+
+            <p>
+              Limpeza de terrenos, remoção e movimentação
+              de terra para deixar o espaço preparado.
+            </p>
+
+          </article>
+
+        </div>
+
+      </div>
+
+    </section>
+
+
+
+    <!-- =====================================================
+         EQUIPAMENTO
+    ====================================================== -->
+
+    <section class="feature" id="equipamento">
+
+      <div class="container">
+
+        <div class="feature-grid">
+
+          <div class="image-reveal reveal-left">
+
+            <!-- TROCAR PELA FOTO REAL DA RETROESCAVADEIRA -->
+
+            <img
+              src="/jcb3cx.jpg"
+              alt="Retroescavadeira trabalhando em uma obra"
+              loading="lazy"
+            >
+
+          </div>
+
+
+          <div class="feature-content reveal-right">
+
+            <div class="eyebrow">
+              O equipamento
+            </div>
+
+            <h2 class="section-title">
+              Pronta para colocar o trabalho em movimento.
+            </h2>
+
+            <p class="section-text">
+              Uma retroescavadeira versátil para diferentes
+              tipos de serviços, com foco em agilidade,
+              precisão e execução adequada ao terreno.
+            </p>
+
+            <ul class="feature-list">
+
+              <li>
+                Equipamento próprio
+                <span>✓</span>
+              </li>
+
+              <li>
+                Operador
+                <span>✓</span>
+              </li>
+
+              <li>
+                Atendimento regional
+                <span>✓</span>
+              </li>
+
+              <li>
+                Orçamento personalizado
+                <span>✓</span>
+              </li>
+
+            </ul>
+
+          </div>
+
+        </div>
+
+      </div>
+
+    </section>
+
+
+
+    <!-- =====================================================
+         VISUAL
+    ====================================================== -->
+
+    <section class="visual-section reveal">
+
+      <div class="visual-bg"></div>
+
+      <div class="container">
+
+        <div class="visual-content">
+
+          <div class="eyebrow">
+            Do terreno à obra
+          </div>
+
+          <h2>
+            Preparação que faz diferença.
+          </h2>
+
+          <p>
+            Antes de construir, é preciso preparar.
+            Conte com equipamento adequado para transformar
+            um terreno bruto em uma área pronta para o próximo passo.
+          </p>
+
+        </div>
+
+      </div>
+
+    </section>
+
+
+
+    <!-- =====================================================
+         DIFERENCIAIS
+    ====================================================== -->
+
+    <section class="differentials">
+
+      <div class="container">
+
+        <div class="diff-grid">
+
+          <div class="reveal-left">
+
+            <div class="eyebrow">
+              Por que contratar
+            </div>
+
+            <h2 class="section-title">
+              Simples, direto e preparado para o trabalho.
+            </h2>
+
+            <p
+              class="section-text"
+              style="margin-top:25px;"
+            >
+              O objetivo é facilitar sua obra desde o primeiro
+              contato até a execução do serviço.
+            </p>
+
+          </div>
+
+
+          <div class="diff-items reveal-right">
+
+            <div class="diff-item">
+
+              <div class="diff-icon">
+                01
+              </div>
+
+              <div>
+
+                <h3>Equipamento adequado</h3>
+
+                <p>
+                  Retroescavadeira versátil para diferentes
+                  tipos de terreno e serviços.
+                </p>
+
+              </div>
+
+            </div>
+
+
+            <div class="diff-item">
+
+              <div class="diff-icon">
+                02
+              </div>
+
+              <div>
+
+                <h3>Atendimento regional</h3>
+
+                <p>
+                  Atendimento em [CIDADE] e cidades
+                  próximas da região.
+                </p>
+
+              </div>
+
+            </div>
+
+
+            <div class="diff-item">
+
+              <div class="diff-icon">
+                03
+              </div>
+
+              <div>
+
+                <h3>Orçamento personalizado</h3>
+
+                <p>
+                  Cada serviço é avaliado de acordo com
+                  as características e necessidades do terreno.
+                </p>
+
+              </div>
+
+            </div>
+
+
+            <div class="diff-item">
+
+              <div class="diff-icon">
+                04
+              </div>
+
+              <div>
+
+                <h3>Contato direto</h3>
+
+                <p>
+                  Fale diretamente pelo WhatsApp e explique
+                  o que precisa ser feito.
+                </p>
+
+              </div>
+
+            </div>
+
+          </div>
+
+        </div>
+
+      </div>
+
+    </section>
+
+
+
+<!-- =====================================================
+         ATENDIMENTO
+    ====================================================== -->
+
+    <section class="coverage" id="atendimento">
+
+      <div class="container">
+
+        <div class="coverage-box reveal">
+
+          <div>
+
+            <div class="eyebrow">
+              Onde atendemos
+            </div>
+
+            <h2 class="section-title">
+              Atendimento regional e sob consulta.
+            </h2>
+
+            <p class="section-text">
+              Com base em <strong>Santa Isabel e Atibaia</strong>, realizamos o deslocamento do equipamento para toda a região. O frete e a viabilidade são avaliados de forma rápida diretamente com você, de acordo com o porte da obra.
+            </p>
+
+          </div>
+
+          <div style="display: flex; flex-direction: column; gap: 20px; align-items: flex-start;">
+            <p style="color: rgba(255,255,255,0.8); font-size: 15px; line-height: 1.6;">
+              Tem uma obra em outra cidade próxima? Não se preocupe. Mande os detalhes do terreno e conversamos sobre o transporte da máquina.
+            </p>
+            <a
+              href="https://wa.me/5500000000000?text=Olá!%20Gostaria%20de%20consultar%20o%20atendimento%20para%20a%20minha%20região."
+              target="_blank"
+              class="btn btn-primary"
+            >
+              Consultar minha região →
+            </a>
+          </div>
+
+        </div>
+
+      </div>
+
+    </section>
+
+
+
+    <!-- =====================================================
+         CTA FINAL
+    ====================================================== -->
+
+    <section class="cta" id="contato">
+
+      <div class="container">
+
+        <div class="eyebrow">
+          Vamos conversar
+        </div>
+
+        <h2>
+          Seu terreno precisa de preparação?
+        </h2>
+
+        <p>
+          Entre em contato, explique o que precisa ser feito
+          e solicite um orçamento.
+        </p>
+
+        <a
+          href="https://wa.me/5500000000000?text=Olá!%20Gostaria%20de%20solicitar%20um%20orçamento."
+          target="_blank"
+          class="btn btn-primary"
+        >
+          Falar pelo WhatsApp →
+        </a>
+
+      </div>
+
+    </section>
+
+  </main>
+
+
+
+  <!-- =======================================================
+       FOOTER
+  ======================================================== -->
+
+  <footer>
+
+    <div class="container">
+
+      <div class="footer-inner">
+
+        <div class="logo">
+          [NOME<span> EMPRESA</span>]
+        </div>
+
+        <div class="footer-copy">
+          © 2026 [Nome da Empresa]. Todos os direitos reservados.
+        </div>
+
+      </div>
+
+    </div>
+
+  </footer>
+
+
+
+  <!-- =======================================================
+       WHATSAPP FLUTUANTE
+  ======================================================== -->
+
+  <a
+    href="https://wa.me/5500000000000?text=Olá!%20Gostaria%20de%20solicitar%20um%20orçamento."
+    target="_blank"
+    class="whatsapp"
+    aria-label="Falar pelo WhatsApp"
+    style="padding: 0; overflow: hidden;"
+  >
+    <img src="/whatsapp-circle.png" alt="WhatsApp" style="width: 50%; height: 50%; object-fit: contain;">
+  </a>
+
+
+
+  <!-- =======================================================
+       JAVASCRIPT
+  ======================================================== -->
+
+  <script>
+
+    /* =======================================================
+       HEADER AO ROLAR
+    ======================================================== */
+
+    const header = document.getElementById("header");
+
+    window.addEventListener("scroll", () => {
+
+      if (window.scrollY > 50) {
+        header.classList.add("scrolled");
+      } else {
+        header.classList.remove("scrolled");
+      }
+
+    });
+
+
+
+    /* =======================================================
+       MENU MOBILE
+    ======================================================== */
+
+    const menuBtn = document.getElementById("menuBtn");
+    const navLinks = document.getElementById("navLinks");
+
+    menuBtn.addEventListener("click", () => {
+
+      navLinks.classList.toggle("active");
+
+      menuBtn.textContent =
+        navLinks.classList.contains("active")
+        ? "×"
+        : "☰";
+
+    });
+
+
+    document.querySelectorAll(".nav-links a").forEach(link => {
+
+      link.addEventListener("click", () => {
+
+        navLinks.classList.remove("active");
+        menuBtn.textContent = "☰";
+
+      });
+
+    });
+
+
+
+    /* =======================================================
+       SCROLL REVEAL
+    ======================================================== */
+
+    const observer = new IntersectionObserver(
+      (entries) => {
+
+        entries.forEach(entry => {
+
+          if (entry.isIntersecting) {
+
+            entry.target.classList.add("visible");
+
+            observer.unobserve(entry.target);
+
+          }
+
+        });
+
+      },
+      {
+        threshold: 0.12
+      }
+    );
+
+
+    document
+      .querySelectorAll(
+        ".reveal, .reveal-left, .reveal-right, .image-reveal"
+      )
+      .forEach(element => {
+
+        observer.observe(element);
+
+      });
+
+
+
+    /* =======================================================
+       ANIMAÇÃO ESCALONADA DOS CARDS
+    ======================================================== */
+
+    document
+      .querySelectorAll(".service-card")
+      .forEach((card, index) => {
+
+        card.style.transitionDelay =
+          `${index * 0.08}s`;
+
+      });
+
+
+
+    /* =======================================================
+       PARALLAX SUAVE DO HERO
+    ======================================================== */
+
+    const heroBg = document.querySelector(".hero-bg");
+
+    window.addEventListener("scroll", () => {
+
+      const scrollY = window.scrollY;
+
+      if (scrollY < window.innerHeight) {
+
+        heroBg.style.transform =
+          `translateY(${scrollY * 0.12}px) scale(1.02)`;
+
+      }
+
+    });
+
+  </script>
+
+</body>
+</html>
