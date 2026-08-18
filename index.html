@@ -2,7 +2,7 @@
 <html lang="pt-BR">
 <head>
   <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
 
   <title>Terraplenagem e Retroescavadeira | Gustavo Terraplanagem</title>
 
@@ -15,13 +15,19 @@
 
   <style>
     /* =========================================================
-       RESET
+       RESET & CORREÇÃO DE VAZAMENTO LATERAL (FIM DAS BORDAS BRANCAS)
     ========================================================= */
 
     * {
       margin: 0;
       padding: 0;
       box-sizing: border-box;
+    }
+
+    html, body {
+      width: 100%;
+      overflow-x: hidden;
+      position: relative;
     }
 
     html {
@@ -32,7 +38,6 @@
       font-family: Arial, Helvetica, sans-serif;
       background: #f5f4f1;
       color: #151515;
-      overflow-x: hidden;
     }
 
     img {
@@ -361,7 +366,7 @@
 
 
     /* =========================================================
-       INTRO (AJUSTADO PARA CENTRALIZAR A IMAGEM AO LADO DO TEXTO)
+       INTRO
     ========================================================= */
 
     .intro {
@@ -373,14 +378,14 @@
       display: grid;
       grid-template-columns: 1fr 1.1fr;
       gap: 80px;
-      align-items: center; /* Centraliza a imagem perfeitamente na altura do texto */
+      align-items: center;
     }
 
     .intro-img-container img {
       width: 100%;
       max-width: 520px;
       height: auto;
-      mix-blend-mode: multiply; /* Faz o fundo branco residual sumir automaticamente */
+      mix-blend-mode: multiply;
     }
 
 
@@ -711,28 +716,24 @@
 
 
     /* =========================================================
-       WHATSAPP
-    ========================================================= */
-
-/* =========================================================
-       WHATSAPP
+       WHATSAPP FLUTUANTE (TRAVADO E ESTÁVEL)
     ========================================================= */
 
     .whatsapp {
       position: fixed;
-      right: 24px;
-      bottom: 24px;
-      width: 58px;
-      height: 58px;
+      right: 20px;
+      bottom: 20px;
+      width: 56px;
+      height: 56px;
       border-radius: 50%;
       background: #25D366;
       display: flex;
       align-items: center;
       justify-content: center;
       z-index: 9999;
-      box-shadow: 0 5px 20px rgba(0,0,0,0.3);
+      box-shadow: 0 4px 15px rgba(0,0,0,0.3);
       transition: .3s;
-      transform: translateZ(0); /* Evita o corte na rolagem da página */
+      transform: translateZ(0);
       padding: 0;
       overflow: hidden;
     }
@@ -929,10 +930,10 @@
       }
 
       .whatsapp {
-        right: 18px;
-        bottom: 18px;
-        width: 55px;
-        height: 55px;
+        right: 16px;
+        bottom: 16px;
+        width: 52px;
+        height: 52px;
       }
     }
 
@@ -1482,7 +1483,7 @@
       <div class="container">
 
         <div class="eyebrow">
-          Vamos conversar
+              Vamos conversar
         </div>
 
         <h2>
@@ -1536,7 +1537,7 @@
 
 
 
-<!-- =======================================================
+  <!-- =======================================================
        WHATSAPP FLUTUANTE
   ======================================================== -->
 
