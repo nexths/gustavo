@@ -329,7 +329,6 @@
       animation: fadeUp .8s .7s forwards;
     }
 
-    /* Organização elegante das cidades na Hero */
     .hero-cities {
       opacity: 0;
       transform: translateY(25px);
@@ -404,7 +403,7 @@
 
 
     /* =========================================================
-       SERVICES
+       SERVICES (NOVA ESTRUTURA DETALHADA)
     ========================================================= */
 
     .services {
@@ -422,26 +421,27 @@
 
     .services-grid {
       display: grid;
-      grid-template-columns: repeat(4, 1fr);
-      border-top: 1px solid var(--border);
-      border-left: 1px solid var(--border);
+      grid-template-columns: repeat(3, 1fr);
+      gap: 30px;
     }
 
     .service-card {
-      min-height: 270px;
-      padding: 35px 28px;
-      border-right: 1px solid var(--border);
-      border-bottom: 1px solid var(--border);
+      background: #faf9f6;
+      border: 1px solid var(--border);
+      padding: 40px 32px;
+      border-radius: 4px;
       transition: .35s ease;
       position: relative;
-      overflow: hidden;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
     }
 
     .service-card::before {
       content: "";
       position: absolute;
+      top: 0;
       left: 0;
-      bottom: 0;
       width: 100%;
       height: 3px;
       background: var(--accent);
@@ -451,7 +451,8 @@
     }
 
     .service-card:hover {
-      background: #faf9f6;
+      background: #ffffff;
+      box-shadow: 0 15px 35px rgba(0,0,0,.06);
       transform: translateY(-5px);
     }
 
@@ -459,22 +460,46 @@
       transform: scaleX(1);
     }
 
+    .service-top-info {
+      margin-bottom: 25px;
+    }
+
     .service-number {
       font-size: 12px;
       color: var(--accent);
       font-weight: 700;
-      margin-bottom: 80px;
+      margin-bottom: 12px;
+      letter-spacing: 1px;
     }
 
     .service-card h3 {
       font-size: 22px;
-      margin-bottom: 15px;
+      margin-bottom: 20px;
+      letter-spacing: -0.5px;
     }
 
-    .service-card p {
-      color: var(--gray);
-      line-height: 1.7;
+    .service-list {
+      list-style: none;
+      display: flex;
+      flex-direction: column;
+      gap: 12px;
+      border-top: 1px solid rgba(0,0,0,0.06);
+      padding-top: 20px;
+    }
+
+    .service-list li {
       font-size: 14px;
+      color: var(--gray);
+      display: flex;
+      align-items: flex-start;
+      gap: 10px;
+      line-height: 1.5;
+    }
+
+    .service-list li::before {
+      content: "—";
+      color: var(--accent);
+      font-weight: bold;
     }
 
 
@@ -820,7 +845,7 @@
       }
 
       .services-grid {
-        grid-template-columns: 1fr 1fr;
+        grid-template-columns: 1fr;
       }
 
       .intro-grid,
@@ -895,12 +920,8 @@
         margin-top: 20px;
       }
 
-      .services-grid {
-        grid-template-columns: 1fr;
-      }
-
       .service-card {
-        min-height: 230px;
+        padding: 30px 24px;
       }
 
       .image-reveal img {
@@ -1027,7 +1048,6 @@
 
           </div>
 
-          <!-- Cidades atendidas organizadas em tags modernas -->
           <div class="hero-cities">
             <span class="hero-cities-label">Principais regiões de atendimento:</span>
             <div class="cities-tags">
@@ -1094,7 +1114,7 @@
 
 
     <!-- =====================================================
-         SERVIÇOS
+         SERVIÇOS (COM TODAS AS CATEGORIAS DETALHADAS)
     ====================================================== -->
 
     <section class="services" id="servicos">
@@ -1104,20 +1124,16 @@
         <div class="services-header reveal">
 
           <div>
-
             <div class="eyebrow">
               O que fazemos
             </div>
-
             <h2 class="section-title">
-              Serviços para preparar o terreno.
+              Soluções completas para a sua obra.
             </h2>
-
           </div>
 
           <p class="section-text">
-            Soluções práticas para diferentes necessidades
-            de preparação e movimentação de terra.
+            Trabalhos especializados de terraplanagem, escavação e infraestrutura para deixar seu terreno pronto com agilidade e precisão.
           </p>
 
         </div>
@@ -1125,67 +1141,94 @@
 
         <div class="services-grid">
 
+          <!-- Card 01: Terraplanagem -->
           <article class="service-card reveal">
-
-            <div class="service-number">
-              01 / 04
+            <div>
+              <div class="service-number">01 / 05</div>
+              <h3>Terraplanagem e Solo</h3>
+              <ul class="service-list">
+                <li>Terraplanagem e nivelamento de terrenos</li>
+                <li>Corte e aterro</li>
+                <li>Regularização e preparação de terrenos</li>
+                <li>Compactação de solo</li>
+                <li>Escavação de terrenos</li>
+                <li>Abertura e fechamento de valas</li>
+                <li>Remoção e movimentação de terra</li>
+                <li>Transporte de terra e materiais</li>
+              </ul>
             </div>
-
-            <h3>Terraplenagem</h3>
-
-            <p>
-              Preparação, correção e nivelamento do terreno
-              para obras e novas construções.
-            </p>
-
           </article>
 
 
+          <!-- Card 02: Fundação e Construção -->
           <article class="service-card reveal">
-
-            <div class="service-number">
-              02 / 04
+            <div>
+              <div class="service-number">02 / 05</div>
+              <h3>Fundação e Estrutura</h3>
+              <ul class="service-list">
+                <li>Perfuração de baldrame</li>
+                <li>Escavação para fundações</li>
+                <li>Abertura de valas para baldrames</li>
+                <li>Escavação para sapatas</li>
+                <li>Escavação para radier</li>
+                <li>Valas para muros de arrimo</li>
+                <li>Preparação de terreno para construção</li>
+                <li>Reaterro de fundações</li>
+              </ul>
             </div>
-
-            <h3>Escavações</h3>
-
-            <p>
-              Escavações para fundações, obras,
-              instalações e diferentes necessidades do terreno.
-            </p>
-
           </article>
 
 
+          <!-- Card 03: Drenagem e Infraestrutura -->
           <article class="service-card reveal">
-
-            <div class="service-number">
-              03 / 04
+            <div>
+              <div class="service-number">03 / 05</div>
+              <h3>Drenagem e Redes</h3>
+              <ul class="service-list">
+                <li>Abertura de valas para drenagem</li>
+                <li>Instalação e preparação para tubos</li>
+                <li>Drenagem de terrenos</li>
+                <li>Canaletas e valetas</li>
+                <li>Caixas de inspeção</li>
+                <li>Redes de água e esgoto</li>
+                <li>Valas para tubulações elétricas</li>
+              </ul>
             </div>
-
-            <h3>Abertura de valas</h3>
-
-            <p>
-              Abertura de valas para tubulações,
-              drenagem, infraestrutura e instalações.
-            </p>
-
           </article>
 
 
+          <!-- Card 04: Estradas e Acessos -->
           <article class="service-card reveal">
-
-            <div class="service-number">
-              04 / 04
+            <div>
+              <div class="service-number">04 / 05</div>
+              <h3>Estradas e Acessos</h3>
+              <ul class="service-list">
+                <li>Abertura de estradas rurais</li>
+                <li>Manutenção de estradas de terra</li>
+                <li>Cascalhamento</li>
+                <li>Nivelamento e regularização</li>
+                <li>Compactação de vias</li>
+                <li>Acessos para chácaras e sítios</li>
+                <li>Ruas internas de loteamentos</li>
+              </ul>
             </div>
+          </article>
 
-            <h3>Limpeza e movimentação</h3>
 
-            <p>
-              Limpeza de terrenos, remoção e movimentação
-              de terra para deixar o espaço preparado.
-            </p>
-
+          <!-- Card 05: Limpeza e Preparação -->
+          <article class="service-card reveal" style="grid-column: span 2;">
+            <div>
+              <div class="service-number">05 / 05</div>
+              <h3>Limpeza e Preparação de Áreas</h3>
+              <ul class="service-list" style="display: grid; grid-template-columns: 1fr 1fr; gap: 12px 20px;">
+                <li>Limpeza de terrenos em geral</li>
+                <li>Destoca e remoção de raízes</li>
+                <li>Retirada e descarte de entulho</li>
+                <li>Limpeza de áreas rurais e chácaras</li>
+                <li>Derrubada de pequenas estruturas (quando autorizada)</li>
+                <li>Preparação de áreas para plantio ou construção</li>
+              </ul>
+            </div>
           </article>
 
         </div>
@@ -1207,15 +1250,12 @@
         <div class="feature-grid">
 
           <div class="image-reveal reveal-left">
-
             <img
               src="jcb3cx.webp"
               alt="Retroescavadeira trabalhando em uma obra"
               loading="lazy"
             >
-
           </div>
-
 
           <div class="feature-content reveal-right">
 
@@ -1234,27 +1274,10 @@
             </p>
 
             <ul class="feature-list">
-
-              <li>
-                Equipamento próprio
-                <span>✓</span>
-              </li>
-
-              <li>
-                Operador
-                <span>✓</span>
-              </li>
-
-              <li>
-                Atendimento regional
-                <span>✓</span>
-              </li>
-
-              <li>
-                Orçamento personalizado
-                <span>✓</span>
-              </li>
-
+              <li>Equipamento próprio <span>✓</span></li>
+              <li>Operador <span>✓</span></li>
+              <li>Atendimento regional <span>✓</span></li>
+              <li>Orçamento personalizado <span>✓</span></li>
             </ul>
 
           </div>
@@ -1321,10 +1344,7 @@
               Simples, direto e preparado para o trabalho.
             </h2>
 
-            <p
-              class="section-text"
-              style="margin-top:25px;"
-            >
+            <p class="section-text" style="margin-top:25px;">
               O objetivo é facilitar sua obra desde o primeiro
               contato até a execução do serviço.
             </p>
@@ -1335,82 +1355,35 @@
           <div class="diff-items reveal-right">
 
             <div class="diff-item">
-
-              <div class="diff-icon">
-                01
-              </div>
-
+              <div class="diff-icon">01</div>
               <div>
-
                 <h3>Equipamento adequado</h3>
-
-                <p>
-                  Retroescavadeira versátil para diferentes
-                  tipos de terreno e serviços.
-                </p>
-
+                <p>Retroescavadeira versátil para diferentes tipos de terreno e serviços.</p>
               </div>
-
             </div>
 
-
             <div class="diff-item">
-
-              <div class="diff-icon">
-                02
-              </div>
-
+              <div class="diff-icon">02</div>
               <div>
-
                 <h3>Atendimento regional</h3>
-
-                <p>
-                  Atendimento em Santa Isabel, Atibaia e cidades
-                  próximas da região.
-                </p>
-
+                <p>Atendimento em Santa Isabel, Atibaia e cidades próximas da região.</p>
               </div>
-
             </div>
 
-
             <div class="diff-item">
-
-              <div class="diff-icon">
-                03
-              </div>
-
+              <div class="diff-icon">03</div>
               <div>
-
                 <h3>Orçamento personalizado</h3>
-
-                <p>
-                  Cada serviço é avaliado de acordo com
-                  as características e necessidades do terreno.
-                </p>
-
+                <p>Cada serviço é avaliado de acordo com as características e necessidades do terreno.</p>
               </div>
-
             </div>
 
-
             <div class="diff-item">
-
-              <div class="diff-icon">
-                04
-              </div>
-
+              <div class="diff-icon">04</div>
               <div>
-
                 <h3>Contato direto</h3>
-
-                <p>
-                  Fale diretamente pelo WhatsApp e explique
-                  o que precisa ser feito.
-                </p>
-
+                <p>Fale diretamente pelo WhatsApp e explique o que precisa ser feito.</p>
               </div>
-
             </div>
 
           </div>
@@ -1632,26 +1605,11 @@
 
     document
       .querySelectorAll(
-        ".reveal, .reveal-left, .reveal-right, is-reveal"
+        ".reveal, .reveal-left, .reveal-right, .image-reveal"
       )
       .forEach(element => {
 
         observer.observe(element);
-
-      });
-
-
-
-    /* =======================================================
-       ANIMAÇÃO ESCALONADA DOS CARDS
-    ======================================================== */
-
-    document
-      .querySelectorAll(".service-card")
-      .forEach((card, index) => {
-
-        card.style.transitionDelay =
-          `${index * 0.08}s`;
 
       });
 
