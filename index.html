@@ -313,28 +313,17 @@
       color: rgba(255,255,255,.78);
       font-size: 17px;
       line-height: 1.7;
-      margin-bottom: 28px;
+      margin-bottom: 25px;
       opacity: 0;
       transform: translateY(25px);
       animation: fadeUp .8s .55s forwards;
     }
 
-    .hero-actions {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 12px;
-      margin-bottom: 35px;
-      opacity: 0;
-      transform: translateY(25px);
-      animation: fadeUp .8s .7s forwards;
-    }
-
     .hero-cities {
       opacity: 0;
       transform: translateY(25px);
-      animation: fadeUp .8s .85s forwards;
-      border-top: 1px solid rgba(255, 255, 255, 0.15);
-      padding-top: 20px;
+      animation: fadeUp .8s .7s forwards;
+      margin-bottom: 35px;
       max-width: 750px;
     }
 
@@ -370,6 +359,15 @@
       background: rgba(216, 155, 39, 0.1);
     }
 
+    .hero-actions {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 12px;
+      opacity: 0;
+      transform: translateY(25px);
+      animation: fadeUp .8s .85s forwards;
+    }
+
     @keyframes fadeUp {
       to {
         opacity: 1;
@@ -403,7 +401,7 @@
 
 
     /* =========================================================
-       SERVICES (GRID MODERNO)
+       SERVICES
     ========================================================= */
 
     .services {
@@ -498,7 +496,6 @@
       font-weight: bold;
     }
 
-    /* Card de Limpeza ocupa 2 colunas no desktop */
     .service-card-wide {
       grid-column: span 2;
     }
@@ -749,7 +746,7 @@
 
 
     /* =========================================================
-       WHATSAPP FLUTUANTE (TRAVADO E ESTÁVEL)
+       WHATSAPP FLUTUANTE
     ========================================================= */
 
     .whatsapp {
@@ -1053,6 +1050,24 @@
             movimentação de terra com retroescavadeira.
           </p>
 
+          <!-- Cidades logo abaixo da descrição -->
+          <div class="hero-cities">
+            <span class="hero-cities-label">Principais regiões de atendimento:</span>
+            <div class="cities-tags">
+              <span class="city-tag">Arujá</span>
+              <span class="city-tag">Atibaia</span>
+              <span class="city-tag">Bom Jesus dos Perdões</span>
+              <span class="city-tag">Bragança Paulista</span>
+              <span class="city-tag">Guararema</span>
+              <span class="city-tag">Igaratá</span>
+              <span class="city-tag">Jacareí</span>
+              <span class="city-tag">Piracaia</span>
+              <span class="city-tag">Santa Isabel</span>
+              <span class="city-tag">São José dos Campos</span>
+            </div>
+          </div>
+
+          <!-- Botões de ação no final da Hero -->
           <div class="hero-actions">
 
             <a
@@ -1070,22 +1085,6 @@
               Conhecer serviços
             </a>
 
-          </div>
-
-          <div class="hero-cities">
-            <span class="hero-cities-label">Principais regiões de atendimento:</span>
-            <div class="cities-tags">
-              <span class="city-tag">Arujá</span>
-              <span class="city-tag">Atibaia</span>
-              <span class="city-tag">Bom Jesus dos Perdões</span>
-              <span class="city-tag">Bragança Paulista</span>
-              <span class="city-tag">Guararema</span>
-              <span class="city-tag">Igaratá</span>
-              <span class="city-tag">Jacareí</span>
-              <span class="city-tag">Piracaia</span>
-              <span class="city-tag">Santa Isabel</span>
-              <span class="city-tag">São José dos Campos</span>
-            </div>
           </div>
 
         </div>
@@ -1602,7 +1601,7 @@
 
 
     /* =======================================================
-       SCROLL REVEAL (ERRO CORRIGIDO AQUI)
+       SCROLL REVEAL
     ======================================================== */
 
     const observer = new IntersectionObserver(
