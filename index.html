@@ -249,6 +249,8 @@
       align-items: center;
       overflow: hidden;
       background: #111;
+      padding-top: 100px;
+      padding-bottom: 60px;
     }
 
     .hero-bg {
@@ -257,9 +259,9 @@
       background-image:
         linear-gradient(
           90deg,
-          rgba(0,0,0,.82) 0%,
-          rgba(0,0,0,.58) 45%,
-          rgba(0,0,0,.20) 100%
+          rgba(0,0,0,.85) 0%,
+          rgba(0,0,0,.65) 50%,
+          rgba(0,0,0,.30) 100%
         ),
         url("hero-retroescavadeira.webp");
 
@@ -282,7 +284,7 @@
       position: relative;
       z-index: 2;
       color: white;
-      padding-top: 80px;
+      max-width: 850px;
     }
 
     .hero-label {
@@ -292,12 +294,11 @@
     }
 
     .hero h1 {
-      max-width: 850px;
-      font-size: clamp(2.5rem, 7vw, 5rem);
-      line-height: .94;
-      letter-spacing: -5px;
+      font-size: clamp(2.5rem, 6vw, 4.5rem);
+      line-height: .98;
+      letter-spacing: -3px;
       font-weight: 800;
-      margin-bottom: 28px;
+      margin-bottom: 22px;
       opacity: 0;
       transform: translateY(35px);
       animation: fadeUp .9s .35s forwards;
@@ -308,11 +309,11 @@
     }
 
     .hero-description {
-      max-width: 600px;
+      max-width: 580px;
       color: rgba(255,255,255,.78);
-      font-size: 18px;
+      font-size: 17px;
       line-height: 1.7;
-      margin-bottom: 35px;
+      margin-bottom: 28px;
       opacity: 0;
       transform: translateY(25px);
       animation: fadeUp .8s .55s forwards;
@@ -322,9 +323,52 @@
       display: flex;
       flex-wrap: wrap;
       gap: 12px;
+      margin-bottom: 35px;
       opacity: 0;
       transform: translateY(25px);
       animation: fadeUp .8s .7s forwards;
+    }
+
+    /* Organização elegante das cidades na Hero */
+    .hero-cities {
+      opacity: 0;
+      transform: translateY(25px);
+      animation: fadeUp .8s .85s forwards;
+      border-top: 1px solid rgba(255, 255, 255, 0.15);
+      padding-top: 20px;
+      max-width: 750px;
+    }
+
+    .hero-cities-label {
+      font-size: 11px;
+      text-transform: uppercase;
+      letter-spacing: 1.5px;
+      color: rgba(255, 255, 255, 0.5);
+      margin-bottom: 10px;
+      display: block;
+    }
+
+    .cities-tags {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 8px;
+    }
+
+    .city-tag {
+      background: rgba(255, 255, 255, 0.07);
+      border: 1px solid rgba(255, 255, 255, 0.12);
+      padding: 6px 12px;
+      border-radius: 4px;
+      font-size: 12px;
+      color: rgba(255, 255, 255, 0.9);
+      backdrop-filter: blur(4px);
+      transition: .2s ease;
+    }
+
+    .city-tag:hover {
+      border-color: var(--accent);
+      color: var(--accent);
+      background: rgba(216, 155, 39, 0.1);
     }
 
     @keyframes fadeUp {
@@ -332,36 +376,6 @@
         opacity: 1;
         transform: translateY(0);
       }
-    }
-
-    .hero-bottom {
-      position: absolute;
-      bottom: 35px;
-      left: 0;
-      width: 100%;
-      z-index: 2;
-    }
-
-    .hero-bottom-inner {
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      color: rgba(255,255,255,.7);
-      font-size: 12px;
-      letter-spacing: 1px;
-      text-transform: uppercase;
-    }
-
-    .scroll-indicator {
-      display: flex;
-      align-items: center;
-      gap: 12px;
-    }
-
-    .scroll-line {
-      width: 50px;
-      height: 1px;
-      background: rgba(255,255,255,.5);
     }
 
 
@@ -647,19 +661,6 @@
       margin-top: 20px;
     }
 
-    .cities {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 10px;
-    }
-
-    .city {
-      border: 1px solid rgba(255,255,255,.18);
-      padding: 12px 16px;
-      font-size: 13px;
-      color: rgba(255,255,255,.85);
-    }
-
 
     /* =========================================================
        CTA
@@ -850,22 +851,19 @@
         width: 88%;
       }
 
-      /* Ajuste da posição da foto da Hero no celular */
       .hero-bg {
         background-position: 28% center !important; 
       }
 
       .hero {
-        min-height: 800px;
-      }
-
-      .hero-bg {
-        background-position: 62% center;
+        min-height: auto;
+        padding-top: 120px;
+        padding-bottom: 80px;
       }
 
       .hero h1 {
-        font-size: clamp(3rem, 14vw, 5rem);
-        letter-spacing: -3px;
+        font-size: clamp(2.5rem, 11vw, 4rem);
+        letter-spacing: -2px;
       }
 
       .hero-description {
@@ -879,10 +877,6 @@
 
       .btn {
         width: 100%;
-      }
-
-      .hero-bottom {
-        display: none;
       }
 
       .intro,
@@ -1033,22 +1027,21 @@
 
           </div>
 
-        </div>
-
-      </div>
-
-
-      <div class="hero-bottom">
-
-        <div class="container hero-bottom-inner">
-
-          <div>
-            Santa Isabel Atibaia e Região
-          </div>
-
-          <div class="scroll-indicator">
-            Role para explorar
-            <span class="scroll-line"></span>
+          <!-- Cidades atendidas organizadas em tags modernas -->
+          <div class="hero-cities">
+            <span class="hero-cities-label">Principais regiões de atendimento:</span>
+            <div class="cities-tags">
+              <span class="city-tag">Arujá</span>
+              <span class="city-tag">Atibaia</span>
+              <span class="city-tag">Bom Jesus dos Perdões</span>
+              <span class="city-tag">Bragança Paulista</span>
+              <span class="city-tag">Guararema</span>
+              <span class="city-tag">Igaratá</span>
+              <span class="city-tag">Jacareí</span>
+              <span class="city-tag">Piracaia</span>
+              <span class="city-tag">Santa Isabel</span>
+              <span class="city-tag">São José dos Campos</span>
+            </div>
           </div>
 
         </div>
@@ -1214,8 +1207,6 @@
         <div class="feature-grid">
 
           <div class="image-reveal reveal-left">
-
-            <!-- TROCAR PELA FOTO REAL DA RETROESCAVADEIRA -->
 
             <img
               src="jcb3cx.webp"
@@ -1432,7 +1423,7 @@
 
 
 
-<!-- =====================================================
+    <!-- =====================================================
          ATENDIMENTO
     ====================================================== -->
 
@@ -1641,7 +1632,7 @@
 
     document
       .querySelectorAll(
-        ".reveal, .reveal-left, .reveal-right, .image-reveal"
+        ".reveal, .reveal-left, .reveal-right, is-reveal"
       )
       .forEach(element => {
 
