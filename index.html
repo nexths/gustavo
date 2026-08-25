@@ -403,7 +403,7 @@
 
 
     /* =========================================================
-       SERVICES (NOVA ESTRUTURA DETALHADA)
+       SERVICES (GRID MODERNO)
     ========================================================= */
 
     .services {
@@ -460,10 +460,6 @@
       transform: scaleX(1);
     }
 
-    .service-top-info {
-      margin-bottom: 25px;
-    }
-
     .service-number {
       font-size: 12px;
       color: var(--accent);
@@ -500,6 +496,17 @@
       content: "—";
       color: var(--accent);
       font-weight: bold;
+    }
+
+    /* Card de Limpeza ocupa 2 colunas no desktop */
+    .service-card-wide {
+      grid-column: span 2;
+    }
+
+    .service-list-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 12px 20px;
     }
 
 
@@ -816,7 +823,7 @@
 
 
     /* =========================================================
-       RESPONSIVO
+       RESPONSIVO (TABLETS E CELULARES)
     ========================================================= */
 
     @media (max-width: 950px) {
@@ -846,6 +853,10 @@
 
       .services-grid {
         grid-template-columns: 1fr;
+      }
+
+      .service-card-wide {
+        grid-column: span 1;
       }
 
       .intro-grid,
@@ -920,8 +931,21 @@
         margin-top: 20px;
       }
 
+      .services-grid {
+        grid-template-columns: 1fr;
+        gap: 20px;
+      }
+
       .service-card {
-        padding: 30px 24px;
+        padding: 25px 20px;
+      }
+
+      .service-card-wide {
+        grid-column: span 1;
+      }
+
+      .service-list-grid {
+        grid-template-columns: 1fr;
       }
 
       .image-reveal img {
@@ -1114,7 +1138,7 @@
 
 
     <!-- =====================================================
-         SERVIÇOS (COM TODAS AS CATEGORIAS DETALHADAS)
+         SERVIÇOS
     ====================================================== -->
 
     <section class="services" id="servicos">
@@ -1216,11 +1240,11 @@
 
 
           <!-- Card 05: Limpeza e Preparação -->
-          <article class="service-card reveal" style="grid-column: span 2;">
+          <article class="service-card service-card-wide reveal">
             <div>
               <div class="service-number">05 / 05</div>
               <h3>Limpeza e Preparação de Áreas</h3>
-              <ul class="service-list" style="display: grid; grid-template-columns: 1fr 1fr; gap: 12px 20px;">
+              <ul class="service-list service-list-grid">
                 <li>Limpeza de terrenos em geral</li>
                 <li>Destoca e remoção de raízes</li>
                 <li>Retirada e descarte de entulho</li>
@@ -1578,7 +1602,7 @@
 
 
     /* =======================================================
-       SCROLL REVEAL
+       SCROLL REVEAL (ERRO CORRIGIDO AQUI)
     ======================================================== */
 
     const observer = new IntersectionObserver(
