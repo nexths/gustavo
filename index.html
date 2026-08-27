@@ -987,6 +987,86 @@
       }
     }
 
+   /* =========================================================
+       ESTILO DO RODAPÉ LIMPO
+    ========================================================= */
+
+    footer {
+      background: #0c0c0c;
+      color: white;
+      padding: 50px 0;
+      border-top: 1px solid rgba(255, 255, 255, 0.05);
+    }
+
+    .footer-inner {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      text-align: center;
+      gap: 25px;
+    }
+
+    .footer-social {
+      display: flex;
+      gap: 30px;
+      align-items: center;
+    }
+
+    .footer-social a {
+      color: rgba(255, 255, 255, 0.75);
+      font-size: 13px;
+      font-weight: 600;
+      text-transform: uppercase;
+      letter-spacing: 1.5px;
+      transition: color 0.3s ease;
+      position: relative;
+    }
+
+    .footer-social a::after {
+      content: "";
+      position: absolute;
+      left: 0;
+      bottom: -4px;
+      width: 0;
+      height: 1px;
+      background: var(--accent);
+      transition: width 0.3s ease;
+    }
+
+    .footer-social a:hover {
+      color: var(--accent);
+    }
+
+    .footer-social a:hover::after {
+      width: 100%;
+    }
+
+    .footer-info {
+      display: flex;
+      flex-direction: column;
+      gap: 6px;
+    }
+
+    .footer-copy {
+      color: rgba(255, 255, 255, 0.45);
+      font-size: 12px;
+    }
+
+    .footer-dev {
+      color: rgba(255, 255, 255, 0.3);
+      font-size: 11px;
+    }
+
+    .footer-dev a {
+      color: rgba(255, 255, 255, 0.6);
+      transition: color 0.2s;
+    }
+
+    .footer-dev a:hover {
+      color: var(--accent);
+      text-decoration: underline;
+    }
+
   </style>
 </head>
 
@@ -1522,12 +1602,20 @@
 
       <div class="footer-inner">
 
-        <div class="logo">
-          GSM<span> Terraplanagem</span>
+        <!-- Redes Sociais centralizadas/destacadas -->
+        <div class="footer-social">
+          <a href="https://instagram.com/terraplanagemgsm" target="_blank" rel="noopener noreferrer">Instagram</a>
+          <a href="https://www.facebook.com/profile.php?id=61593408131619" target="_blank" rel="noopener noreferrer">Facebook</a>
         </div>
 
-        <div class="footer-copy">
-          © 2026 GSM Terraplanagem. Todos os direitos reservados.
+        <!-- Informações e Créditos -->
+        <div class="footer-info">
+          <div class="footer-copy">
+            © 2026 GSM Terraplanagem. Todos os direitos reservados.
+          </div>
+          <div class="footer-dev">
+            Desenvolvido por <a href="https://wa.me/5511999814081?text=Olá,%20vi%20o%20site%20da%20GSM%20Terraplanagem%20e%20gostaria%20de%20um%20orçamento%20para%20criação%20de%20site." target="_blank" rel="noopener noreferrer">Henrique Ferreira da Silva</a>
+          </div>
         </div>
 
       </div>
