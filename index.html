@@ -4,14 +4,57 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
 
-  <title>Terraplenagem e Retroescavadeira | GSM Terraplanagem</title>
+  <title>Terraplenagem e Mini Escavadeira em Santa Isabel, Atibaia e Região | GSM Terraplanagem</title>
 
   <meta
     name="description"
-    content="Serviços de terraplenagem, escavação, nivelamento e movimentação de terra com retroescavadeira. Solicite seu orçamento."
+    content="Serviços de terraplenagem, escavação, abertura de valas, nivelamento e movimentação de terra com mini escavadeira em Santa Isabel, Atibaia e região. Solicite seu orçamento."
   >
+  <meta name="robots" content="index, follow">
+  <link rel="canonical" href="https://www.gsmterraplanagem.com.br/">
+
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://www.gsmterraplanagem.com.br/">
+  <meta property="og:title" content="Terraplenagem e Mini Escavadeira | GSM Terraplanagem">
+  <meta property="og:description" content="Escavação, nivelamento, valas e movimentação de terra com mini escavadeira em Santa Isabel, Atibaia e região.">
+  <meta property="og:image" content="https://www.gsmterraplanagem.com.br/assets/hero-retroescavadeira.webp">
 
   <meta name="theme-color" content="#111111">
+
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "HomeAndConstructionBusiness",
+    "name": "GSM Terraplanagem",
+    "url": "https://www.gsmterraplanagem.com.br/",
+    "image": "https://www.gsmterraplanagem.com.br/assets/hero-retroescavadeira.webp",
+    "telephone": "+55-11-98237-8522",
+    "priceRange": "$$",
+    "description": "Serviços especializados de terraplenagem, escavação, abertura de valas, nivelamento e preparação de terrenos com mini escavadeira em Santa Isabel, Atibaia e região.",
+    "address": {
+      "@type": "PostalAddress",
+      "addressLocality": "Santa Isabel",
+      "addressRegion": "SP",
+      "addressCountry": "BR"
+    },
+    "areaServed": [
+      { "@type": "City", "name": "Santa Isabel" },
+      { "@type": "City", "name": "Atibaia" },
+      { "@type": "City", "name": "Arujá" },
+      { "@type": "City", "name": "Bom Jesus dos Perdões" },
+      { "@type": "City", "name": "Bragança Paulista" },
+      { "@type": "City", "name": "Guararema" },
+      { "@type": "City", "name": "Igaratá" },
+      { "@type": "City", "name": "Jacareí" },
+      { "@type": "City", "name": "Piracaia" },
+      { "@type": "City", "name": "São José dos Campos" }
+    ],
+    "sameAs": [
+      "https://instagram.com/terraplanagemgsm",
+      "https://www.facebook.com/profile.php?id=61593408131619"
+    ]
+  }
+  </script>
 
   <style>
     /* =========================================================
@@ -36,7 +79,7 @@
 
     body {
       font-family: Arial, Helvetica, sans-serif;
-      background: #f5f4f1;
+      background: #f4f4f6;
       color: #151515;
     }
 
@@ -56,17 +99,17 @@
 
 
     /* =========================================================
-       VARIÁVEIS
+       VARIÁVEIS (PALETA VERMELHO & GRAFITE)
     ========================================================= */
 
     :root {
       --dark: #111111;
-      --dark-soft: #1a1a1a;
-      --light: #f5f4f1;
+      --dark-soft: #1c1d21;
+      --light: #f4f4f6;
       --white: #ffffff;
-      --accent: #d89b27;
-      --accent-dark: #b87b16;
-      --gray: #6c6c6c;
+      --accent: #e52421;
+      --accent-dark: #b81816;
+      --gray: #666870;
       --border: rgba(0,0,0,.10);
       --max-width: 1200px;
     }
@@ -129,11 +172,12 @@
 
     .btn-primary {
       background: var(--accent);
-      color: #111;
+      color: var(--white);
     }
 
     .btn-primary:hover {
       background: var(--white);
+      color: var(--dark);
       transform: translateY(-3px);
     }
 
@@ -144,7 +188,7 @@
 
     .btn-outline:hover {
       background: white;
-      color: #111;
+      color: var(--dark);
       transform: translateY(-3px);
     }
 
@@ -167,7 +211,7 @@
       background: rgba(17,17,17,.94);
       backdrop-filter: blur(12px);
       padding: 14px 0;
-      box-shadow: 0 5px 30px rgba(0,0,0,.15);
+      box-shadow: 0 5px 30px rgba(0,0,0,.20);
     }
 
     .nav {
@@ -219,9 +263,14 @@
 
     .nav-cta {
       background: var(--accent);
-      color: #111;
+      color: var(--white);
       padding: 11px 17px;
       border-radius: 3px;
+      transition: .3s ease;
+    }
+
+    .nav-cta:hover {
+      background: var(--accent-dark);
     }
 
     .nav-cta:hover::after {
@@ -249,7 +298,7 @@
       display: flex;
       align-items: center;
       overflow: hidden;
-      background: #111;
+      background: var(--dark);
       padding-top: 100px;
       padding-bottom: 60px;
     }
@@ -260,21 +309,21 @@
       background-image:
         linear-gradient(
           90deg,
-          rgba(0,0,0,.85) 0%,
-          rgba(0,0,0,.65) 50%,
-          rgba(0,0,0,.30) 100%
+          rgba(12, 12, 14, 0.92) 0%,
+          rgba(17, 17, 20, 0.78) 48%,
+          rgba(229, 36, 33, 0.08) 100%
         ),
-        url("hero-retroescavadeira.webp");
+        url("assets/hero-retroescavadeira.webp");
 
       background-size: cover;
-      background-position: center;
-      transform: scale(1.06);
+      background-position: 75% center;
+      transform: scale(1.02);
       animation: heroZoom 10s ease forwards;
     }
 
     @keyframes heroZoom {
       from {
-        transform: scale(1.10);
+        transform: scale(1.05);
       }
       to {
         transform: scale(1);
@@ -356,8 +405,8 @@
 
     .city-tag:hover {
       border-color: var(--accent);
-      color: var(--accent);
-      background: rgba(216, 155, 39, 0.1);
+      color: var(--white);
+      background: rgba(229, 36, 33, 0.22);
     }
 
     .hero-actions {
@@ -425,7 +474,7 @@
     }
 
     .service-card {
-      background: #faf9f6;
+      background: #f8f8fa;
       border: 1px solid var(--border);
       padding: 40px 32px;
       border-radius: 4px;
@@ -451,7 +500,7 @@
 
     .service-card:hover {
       background: #ffffff;
-      box-shadow: 0 15px 35px rgba(0,0,0,.06);
+      box-shadow: 0 15px 35px rgba(0,0,0,.07);
       transform: translateY(-5px);
     }
 
@@ -514,7 +563,7 @@
 
     .feature {
       padding: 120px 0;
-      background: #151515;
+      background: var(--dark-soft);
       color: white;
     }
 
@@ -528,6 +577,7 @@
     .image-reveal {
       overflow: hidden;
       position: relative;
+      border-radius: 4px;
     }
 
     .image-reveal img {
@@ -542,7 +592,7 @@
     }
 
     .feature-content .section-text {
-      color: rgba(255,255,255,.65);
+      color: rgba(255,255,255,.68);
       margin-top: 25px;
       margin-bottom: 35px;
     }
@@ -563,7 +613,8 @@
 
     .feature-list span {
       color: var(--accent);
-      font-size: 13px;
+      font-size: 14px;
+      font-weight: bold;
     }
 
 
@@ -572,26 +623,26 @@
     ========================================================= */
 
     .visual-section {
-      min-height: 650px;
+      min-height: 85vh;
       position: relative;
       display: flex;
       align-items: center;
       overflow: hidden;
-      background: #111;
+      background: var(--dark);
     }
 
     .visual-bg {
       position: absolute;
       inset: 0;
       background:
-        linear-gradient(rgba(0,0,0,.50), rgba(0,0,0,.60)),
-        url("retro-obra.webp")
-        center / cover;
-      transition: transform 1.5s ease;
-    }
-
-    .visual-section.visible .visual-bg {
-      transform: scale(1.04);
+        linear-gradient(
+          90deg,
+          rgba(12, 12, 14, 0.85) 0%,
+          rgba(12, 12, 14, 0.50) 55%,
+          rgba(12, 12, 14, 0.25) 100%
+        ),
+        url("assets/obra.webp")
+        center 45% / cover no-repeat;
     }
 
     .visual-content {
@@ -647,12 +698,14 @@
     .diff-icon {
       width: 42px;
       height: 42px;
-      border: 1px solid var(--border);
+      border: 1px solid rgba(229, 36, 33, 0.35);
+      background: rgba(229, 36, 33, 0.05);
       display: flex;
       align-items: center;
       justify-content: center;
-      color: var(--accent-dark);
+      color: var(--accent);
       font-weight: bold;
+      border-radius: 3px;
     }
 
     .diff-item h3 {
@@ -677,9 +730,11 @@
     }
 
     .coverage-box {
-      background: #171717;
+      background: var(--dark-soft);
       color: white;
       padding: 70px;
+      border-radius: 4px;
+      border-left: 4px solid var(--accent);
       display: grid;
       grid-template-columns: 1fr 1fr;
       gap: 70px;
@@ -687,7 +742,7 @@
     }
 
     .coverage-box .section-text {
-      color: rgba(255,255,255,.65);
+      color: rgba(255,255,255,.68);
       margin-top: 20px;
     }
 
@@ -700,8 +755,8 @@
       position: relative;
       padding: 140px 0;
       background:
-        linear-gradient(rgba(0,0,0,.76), rgba(0,0,0,.76)),
-        url("retro-noturna.webp")
+        linear-gradient(rgba(12,12,14,.78), rgba(12,12,14,.82)),
+        url("assets/x20pro-noturna.webp")
         center / cover;
       color: white;
       text-align: center;
@@ -718,31 +773,8 @@
     .cta p {
       max-width: 550px;
       margin: 0 auto 35px;
-      color: rgba(255,255,255,.7);
+      color: rgba(255,255,255,.72);
       line-height: 1.7;
-    }
-
-
-    /* =========================================================
-       FOOTER
-    ========================================================= */
-
-    footer {
-      background: #0c0c0c;
-      color: white;
-      padding: 45px 0;
-    }
-
-    .footer-inner {
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      gap: 30px;
-    }
-
-    .footer-copy {
-      color: rgba(255,255,255,.45);
-      font-size: 12px;
     }
 
 
@@ -832,7 +864,7 @@
         right: -100%;
         width: min(80%, 340px);
         height: 100vh;
-        background: #111;
+        background: var(--dark);
         flex-direction: column;
         justify-content: center;
         gap: 30px;
@@ -886,17 +918,17 @@
       }
 
       .hero-bg {
-        background-position: 28% center !important; 
+        background-position: 76% center !important; 
       }
 
       .hero {
         min-height: 100dvh;
         padding-top: 90px;
-        padding-bottom: 25px; /* Enxuga o rodapé da Hero para caber em telas curtas */
+        padding-bottom: 25px;
       }
 
       .hero h1 {
-        font-size: clamp(2.2rem, 9.5vw, 3.3rem); /* Leve ajuste para economizar espaço vertical */
+        font-size: clamp(2.2rem, 9.5vw, 3.3rem);
         letter-spacing: -2px;
         margin-bottom: 12px;
       }
@@ -918,7 +950,7 @@
 
       .btn {
         width: 100%;
-        padding: 13px 20px; /* Botões mais compactos no celular */
+        padding: 13px 20px;
       }
 
       .intro,
@@ -962,6 +994,10 @@
         min-height: 550px;
       }
 
+      .visual-bg {
+        background-position: 68% center !important;
+      }
+
       .visual-content h2 {
         letter-spacing: -3px;
       }
@@ -972,11 +1008,6 @@
 
       .cta h2 {
         letter-spacing: -3px;
-      }
-
-      .footer-inner {
-        flex-direction: column;
-        align-items: flex-start;
       }
 
       .whatsapp {
@@ -1127,7 +1158,7 @@
         <div class="hero-content">
 
           <div class="eyebrow hero-label">
-            Terraplenagem • Retroescavadeira
+            Terraplenagem • Mini Escavadeira
           </div>
 
           <h1>
@@ -1136,7 +1167,7 @@
 
           <p class="hero-description">
             Serviços de terraplenagem, escavação, nivelamento e
-            movimentação de terra com retroescavadeira.
+            movimentação de terra com mini escavadeira em Santa Isabel, Atibaia e região.
           </p>
 
           <!-- Cidades logo abaixo da descrição -->
@@ -1144,14 +1175,14 @@
             <span class="hero-cities-label">Principais regiões de atendimento:</span>
             <div class="cities-tags">
               <span class="city-tag">Arujá</span>
-              <span class="city-tag">Atibaia</span>
+              <a href="terraplanagem-atibaia.html" class="city-tag">Atibaia</a>
               <span class="city-tag">Bom Jesus dos Perdões</span>
               <span class="city-tag">Bragança Paulista</span>
               <span class="city-tag">Guararema</span>
               <span class="city-tag">Igaratá</span>
               <span class="city-tag">Jacareí</span>
               <span class="city-tag">Piracaia</span>
-              <span class="city-tag">Santa Isabel</span>
+              <a href="terraplanagem-santa-isabel.html" class="city-tag">Santa Isabel</a>
               <span class="city-tag">São José dos Campos</span>
             </div>
           </div>
@@ -1195,7 +1226,7 @@
         <div class="intro-grid">
 
           <div class="reveal-left intro-img-container">
-            <img src="jcb-sem-fundo.webp" alt="Retroescavadeira em operação" loading="lazy">
+            <img src="assets/x20-pro.webp" alt="Mini escavadeira em operação" loading="lazy">
           </div>
 
           <div class="reveal-right">
@@ -1212,7 +1243,7 @@
               Cada terreno exige um tipo de preparação.
               Trabalhamos com serviços de escavação, nivelamento,
               limpeza e movimentação de terra para obras,
-              construções e projetos diversos.
+              construções e projetos diversos em Santa Isabel, Atibaia e cidades próximas.
             </p>
 
           </div>
@@ -1363,8 +1394,8 @@
 
           <div class="image-reveal reveal-left">
             <img
-              src="jcb3cx.webp"
-              alt="Retroescavadeira trabalhando em uma obra"
+              src="assets/equipamento.webp"
+              alt="Mini escavadeira trabalhando em uma obra"
               loading="lazy"
             />
           </div>
@@ -1380,7 +1411,7 @@
             </h2>
 
             <p class="section-text">
-              Uma retroescavadeira versátil para diferentes
+              Uma mini escavadeira versátil para diferentes
               tipos de serviços, com foco em agilidade,
               precisão e execução adequada ao terreno.
             </p>
@@ -1470,7 +1501,7 @@
               <div class="diff-icon">01</div>
               <div>
                 <h3>Equipamento adequado</h3>
-                <p>Retroescavadeira versátil para diferentes tipos de terreno e serviços.</p>
+                <p>Mini escavadeira versátil para diferentes tipos de terreno e serviços.</p>
               </div>
             </div>
 
@@ -1529,7 +1560,7 @@
             </h2>
 
             <p class="section-text">
-              Com base em <strong>Santa Isabel e Atibaia</strong>, realizamos o deslocamento do equipamento para toda a região. O frete e a viabilidade são avaliados de forma rápida diretamente com você, de acordo com o porte da obra.
+              Com base em <strong>Santa Isabel e Atibaia</strong>, realizamos o deslocamento do equipamento para toda a região. Veja também nossas páginas dedicadas para <a href="terraplanagem-santa-isabel.html" style="color: var(--accent); text-decoration: underline;">Santa Isabel</a> e <a href="terraplanagem-atibaia.html" style="color: var(--accent); text-decoration: underline;">Atibaia</a>.
             </p>
 
           </div>
@@ -1614,7 +1645,7 @@
             © 2026 GSM Terraplanagem. Todos os direitos reservados.
           </div>
           <div class="footer-dev">
-            Desenvolvido por <a href="https://wa.me/5511999814081?text=Olá,%20vi%20o%20site%20da%20GSM%20Terraplanagem%20e%20gostaria%20de%20um%20orçamento%20para%20criação%20de%20site." target="_blank" rel="noopener noreferrer">Henrique Ferreira da Silva</a>
+            Desenvolvido por <a href="https://trendlocalseo.com.br/" target="_blank" rel="noopener noreferrer">TRENDLOCAL SEO</a>
           </div>
         </div>
 
@@ -1636,7 +1667,7 @@
     class="whatsapp"
     aria-label="Falar pelo WhatsApp"
   >
-    <img src="whatsapp-circle.png" alt="WhatsApp">
+    <img src="assets/whatsapp-circle.png" alt="WhatsApp">
   </a>
 
 
